@@ -112,6 +112,8 @@
 }
 
 -(void)addRssAddress{
+    //删除，用的时候去掉注释。。
+//    [self deleteCoreData];
     UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"输入地址" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     textField = [alert textFieldAtIndex:0];
@@ -152,6 +154,29 @@
 
     
     return cell;
+}
+
+-(void)deleteCoreData{
+    //删除coredata中的title数据
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Entry" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setIncludesPropertyValues:NO];
+    [request setEntity:description];
+    NSError *error = nil;
+    NSArray *datas = [context executeFetchRequest:request error:&error];
+    if (!error && datas && [datas count])
+    {
+        for (NSManagedObject *obj in datas)
+        {
+            [context deleteObject:obj];
+        }
+        if (![context save:&error])
+        {
+            NSLog(@"error:%@",error);
+        }  
+    }
+    //------------------------
 }
 
 @end
