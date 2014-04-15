@@ -45,6 +45,7 @@
     [self.view addSubview:table];
     
     title_arr = [[NSMutableArray alloc] init];
+    content_arr = [[NSMutableArray alloc] init];
     
     appDelegate = [UIApplication sharedApplication].delegate;
 
@@ -98,6 +99,7 @@
                 //之前写在多线程里面，一直存不进去，写到主线程中就好了
                 Entry *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:[appDelegate managedObjectContext]];
                 entity.title = [NSString stringWithFormat:@"%@",[title_arr objectAtIndex:i]];
+                entity.content = [NSString stringWithFormat:@"%@",[content_arr objectAtIndex:i]];
                 NSError *error;
                 [[appDelegate managedObjectContext] save:&error];
             }
@@ -162,6 +164,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     ContentViewController *content = [[ContentViewController alloc] init];
     [self.navigationController pushViewController:content animated:YES];
+    
     content.content_str = [NSString stringWithFormat:@"%@",[content_arr objectAtIndex:indexPath.row] ];
     NSLog(@"%@",content.content_str);
 }

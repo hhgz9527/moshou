@@ -29,6 +29,8 @@
 	// Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     UILabel *content_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 320, 500)];
+    content_label.numberOfLines = 0;
+    content_label.lineBreakMode = NSLineBreakByCharWrapping;
     content_label.text = _content_str;
     [self.view addSubview:content_label];
 }
