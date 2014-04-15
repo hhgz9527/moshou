@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 
-@interface ContentViewController : UIViewController
+@interface ContentViewController : UIViewController{
+    NSMutableArray *result;
+}
 
+@property(nonatomic, assign)NSInteger i;
 @property(nonatomic,copy)NSString *content_str;
 
 @end

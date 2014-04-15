@@ -165,8 +165,8 @@
     ContentViewController *content = [[ContentViewController alloc] init];
     [self.navigationController pushViewController:content animated:YES];
     
-    content.content_str = [NSString stringWithFormat:@"%@",[content_arr objectAtIndex:indexPath.row] ];
-    NSLog(@"%@",content.content_str);
+//    content.content_str = [NSString stringWithFormat:@"%@",[content_arr objectAtIndex:indexPath.row] ];
+    content.i = indexPath.row;
 }
 
 
