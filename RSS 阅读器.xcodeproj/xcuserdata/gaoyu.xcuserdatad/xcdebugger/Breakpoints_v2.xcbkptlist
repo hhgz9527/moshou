@@ -2,4 +2,52 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSS &#38405;&#35835;&#22120;/MainViewController.m"
+            timestampString = "419266394.194773"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-jiexi:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__28-[MainViewController jiexi:]_block_invoke_2"
+                  moduleName = "RSS &#38405;&#35835;&#22120;"
+                  urlString = "file:///Users/gaoyu/Desktop/moshoublackroom/RSS%20%E9%98%85%E8%AF%BB%E5%99%A8/MainViewController.m"
+                  timestampString = "419266394.199016"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "62">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__28-[MainViewController jiexi:]_block_invoke_2"
+                  moduleName = "RSS &#38405;&#35835;&#22120;"
+                  urlString = "file:///Users/gaoyu/Desktop/moshoublackroom/RSS%20%E9%98%85%E8%AF%BB%E5%99%A8/MainViewController.m"
+                  timestampString = "419266394.199359"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "277">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
