@@ -89,7 +89,8 @@
             for (int i = 0; i<title_arr.count; i++) {
                 NSLog(@"%@",[NSString stringWithFormat:@"%@",[title_arr objectAtIndex:i]]);
                 
-                
+                //依次存入到coredata中
+                //之前写在多线程里面，一直存不进去，写到主线程中就好了
                 Entry *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:[appDelegate managedObjectContext]];
                 entity.title = [NSString stringWithFormat:@"%@",[title_arr objectAtIndex:i]];
                 NSError *error;
