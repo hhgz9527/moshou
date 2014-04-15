@@ -31,7 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRssAddress)];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(read)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(reads)];
 
     UIButton *nslog = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [nslog setTitle:@"解析" forState:UIControlStateNormal];
@@ -50,7 +50,7 @@
     
 }
 
--(void)read{
+-(void)reads{
     //创建取回数据请求
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     //设置要检索那种类型的实体对象
@@ -67,16 +67,13 @@
     if (request == nil) {
         NSLog(@"%@",error);
     }
+    
     for (NSManagedObject *enti in result) {
-        NSLog(@"%@",[enti valueForKey:@"title"]);
+        NSLog(@"我就看看有几个：%@",[enti valueForKey:@"title"]);
     }
 }
 
 -(void)jiexi:(NSString *)url{
-    Entry *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:[appDelegate managedObjectContext]];
-//    entity.title = @"1234";
-//    [[appDelegate managedObjectContext] save:&er];
-
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         _party = [RssParser loadParty:url];
         if (_party != nil) {
@@ -84,21 +81,25 @@
             for (rss in _party.arr) {
                 NSLog(@"标题：%@",rss.title);
                 [title_arr addObject:rss.title];
-                
-                entity.title = rss.title;
-                NSLog(@"%@",entity.title);
-                NSError *er;
-                [[appDelegate managedObjectContext] save:&er];
-
-
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
                 [table reloadData];
+            
+            for (int i = 0; i<title_arr.count; i++) {
+                NSLog(@"%@",[NSString stringWithFormat:@"%@",[title_arr objectAtIndex:i]]);
+                
+                
+                Entry *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:[appDelegate managedObjectContext]];
+                entity.title = [NSString stringWithFormat:@"%@",[title_arr objectAtIndex:i]];
+                NSError *error;
+                [[appDelegate managedObjectContext] save:&error];
+            }
+
         });
     });
     
-    
+
 
 }
 
@@ -110,7 +111,6 @@
 }
 
 -(void)addRssAddress{
-
     UIAlertView *alert = [[UIAlertView alloc]  initWithTitle:@"输入地址" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     alert.alertViewStyle = UIAlertViewStylePlainTextInput;
     textField = [alert textFieldAtIndex:0];
@@ -149,14 +149,7 @@
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:10];
     cell.textLabel.text = [NSString stringWithFormat:@"%@",[title_arr objectAtIndex:indexPath.row]];
 
-    NSLog(@"%@",title_arr);
-
-
-//    [entity setValue:rss.title forKey:@"title"];
-//    [appDelegate save];
     
-
-
     return cell;
 }
 
