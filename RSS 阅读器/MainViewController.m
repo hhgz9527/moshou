@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "Entry.h"
-
+#import "ContentViewController.h"
 
 @interface MainViewController ()
 
@@ -31,7 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addRssAddress)];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(reads)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(readed)];
 
     UIButton *nslog = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [nslog setTitle:@"解析" forState:UIControlStateNormal];
@@ -47,33 +47,38 @@
     title_arr = [[NSMutableArray alloc] init];
     
     appDelegate = [UIApplication sharedApplication].delegate;
-    
+
+    [self readed];
 }
 
--(void)reads{
-    //创建取回数据请求
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+-(void)readed{
+
     //设置要检索那种类型的实体对象
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entry" inManagedObjectContext:appDelegate.managedObjectContext];
+//    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
+//    NSArray *arr = [[NSArray alloc] initWithObjects:sort, nil];
+
+    //创建取回数据请求
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    //指定结果的排序
+//    [request setSortDescriptors:arr];
     //设置请求实体
     [request setEntity:entity];
-    //指定结果的排序
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:NO];
-    NSArray *arr = [[NSArray alloc] initWithObjects:sort, nil];
-    [request setSortDescriptors:arr];
-    
+
     NSError *error = nil;
-    NSMutableArray *result = [[appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    NSMutableArray *result1 = [[appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     if (request == nil) {
         NSLog(@"%@",error);
     }
-    
-    for (NSManagedObject *enti in result) {
+    result = [[NSMutableArray alloc] init];
+    for (NSManagedObject *enti in result1) {
         NSLog(@"我就看看有几个：%@",[enti valueForKey:@"title"]);
+        [result addObject:[enti valueForKey:@"title"]];
     }
 }
 
 -(void)jiexi:(NSString *)url{
+    [self deleteCoreData];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         _party = [RssParser loadParty:url];
         if (_party != nil) {
@@ -81,14 +86,14 @@
             for (rss in _party.arr) {
                 NSLog(@"标题：%@",rss.title);
                 [title_arr addObject:rss.title];
+                [content_arr addObject:rss.content];
+                NSLog(@"%@",rss.content);
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
                 [table reloadData];
             
             for (int i = 0; i<title_arr.count; i++) {
-                NSLog(@"%@",[NSString stringWithFormat:@"%@",[title_arr objectAtIndex:i]]);
-                
                 //依次存入到coredata中
                 //之前写在多线程里面，一直存不进去，写到主线程中就好了
                 Entry *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Entry" inManagedObjectContext:[appDelegate managedObjectContext]];
@@ -96,7 +101,7 @@
                 NSError *error;
                 [[appDelegate managedObjectContext] save:&error];
             }
-
+            [self readed];
         });
     });
     
@@ -140,7 +145,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return title_arr.count;
+    return result.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -149,12 +154,18 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:iden];
     }
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:10];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@",[title_arr objectAtIndex:indexPath.row]];
-
-    
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@",[result objectAtIndex:indexPath.row]];
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ContentViewController *content = [[ContentViewController alloc] init];
+    [self.navigationController pushViewController:content animated:YES];
+    content.content_str = [NSString stringWithFormat:@"%@",[content_arr objectAtIndex:indexPath.row] ];
+    NSLog(@"%@",content.content_str);
+}
+
 
 -(void)deleteCoreData{
     //删除coredata中的title数据
@@ -176,7 +187,6 @@
             NSLog(@"error:%@",error);
         }  
     }
-    //------------------------
 }
 
 @end

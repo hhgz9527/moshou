@@ -13,6 +13,14 @@
 
 @implementation RssParser
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+    }
+    return self;
+}
+
 +(NSString *)dataFilePath:(BOOL)forSave url:(NSString *)url{
     NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
     NSString *docu = [path objectAtIndex:0];
@@ -38,20 +46,30 @@
     NSArray *arr = [doc.rootElement elementsForName:@"entry"];
     for (GDataXMLElement *partyMember in arr) {
         NSString *title_str;
-        
+        NSString *content_str;
+       
         NSArray *names = [partyMember elementsForName:@"title"];
+        NSArray *contents = [partyMember elementsForName:@"content"];
+        
         if (names.count > 0) {
             GDataXMLElement *title = (GDataXMLElement *)[names objectAtIndex:0];
             title_str = title.stringValue;
+            GDataXMLElement *content = (GDataXMLElement *)[contents objectAtIndex:0];
+            content_str = [content stringValue];
         }
         Rss *rss = [[Rss alloc] init];
         rss.title = title_str;
+        rss.content = content_str;
         [party.arr addObject:rss];
     }
     return party;
+    
+
 }
 
 +(void)saveParty:(Party *)party{
 }
+
+
 
 @end

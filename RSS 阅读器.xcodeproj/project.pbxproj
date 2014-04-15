@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		734D18E518FD77990076270B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 734D18E418FD77990076270B /* README.md */; };
+		734D18E818FD8F430076270B /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 734D18E718FD8F430076270B /* ContentViewController.m */; };
 		735E56A418FA95C200130EF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735E56A318FA95C200130EF0 /* Foundation.framework */; };
 		735E56A618FA95C200130EF0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735E56A518FA95C200130EF0 /* CoreGraphics.framework */; };
 		735E56A818FA95C200130EF0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 735E56A718FA95C200130EF0 /* UIKit.framework */; };
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		734D18E418FD77990076270B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		734D18E618FD8F430076270B /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		734D18E718FD8F430076270B /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		735E56A018FA95C200130EF0 /* RSS 阅读器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSS 阅读器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		735E56A318FA95C200130EF0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		735E56A518FA95C200130EF0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -147,6 +150,8 @@
 				735E56B318FA95C200130EF0 /* AppDelegate.m */,
 				735E56D218FA95F500130EF0 /* MainViewController.h */,
 				735E56D318FA95F500130EF0 /* MainViewController.m */,
+				734D18E618FD8F430076270B /* ContentViewController.h */,
+				734D18E718FD8F430076270B /* ContentViewController.m */,
 				735E56B518FA95C200130EF0 /* Images.xcassets */,
 				735E56AA18FA95C200130EF0 /* Supporting Files */,
 			);
@@ -326,6 +331,7 @@
 				73C13C8318FC4C2C00624854 /* Entry.m in Sources */,
 				73C13C7218FC392400624854 /* LocalModel.xcdatamodeld in Sources */,
 				735E56B018FA95C200130EF0 /* main.m in Sources */,
+				734D18E818FD8F430076270B /* ContentViewController.m in Sources */,
 				73E87BC918FAC34C000E120C /* Rss.m in Sources */,
 				73E87BD318FAC8B1000E120C /* Party.m in Sources */,
 				73E87BCE18FAC446000E120C /* RssParser.m in Sources */,

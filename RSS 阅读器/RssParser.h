@@ -10,11 +10,13 @@
 
 @class Party;
 
-@interface RssParser : NSObject
+@interface RssParser : NSObject<NSXMLParserDelegate>
 
 +(NSString *)dataFilePath:(BOOL)forSave url:(NSString *)url;
 
 +(Party *)loadParty:(NSString *)URL;
 
 +(void)saveParty:(Party *)party;
+
+@property(nonatomic,retain)NSMutableString *temp;
 @end

@@ -20,8 +20,12 @@
     Rss *rss;
     UITableView *table;
     NSMutableArray *title_arr;
+    NSMutableArray *content_arr;
     AppDelegate *appDelegate;
     NSMutableArray *entries;
+    
+    NSMutableArray *result;
+    
 }
 
 @property(nonatomic,retain)Party *party;

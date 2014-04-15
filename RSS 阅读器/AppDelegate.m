@@ -20,6 +20,7 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:main];
     //设置navbar的背景
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navbackcolor"] forBarMetrics:UIBarMetricsDefault];
+    
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     return YES;
@@ -30,8 +31,7 @@
         return _managedObjectModel;
     }
     _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
-//    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"test" withExtension:@"momd"];
-//    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+
     return _managedObjectModel;
 }
 
