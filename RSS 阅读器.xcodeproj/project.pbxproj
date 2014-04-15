@@ -27,7 +27,6 @@
 		73E84F7418FA97D0005100D9 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E84F7318FA97D0005100D9 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		73E84F7618FA9A2D005100D9 /* navbackcolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 73E84F7518FA9A2D005100D9 /* navbackcolor.png */; };
 		73E87BC918FAC34C000E120C /* Rss.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E87BC818FAC34C000E120C /* Rss.m */; };
-		73E87BCB18FAC41F000E120C /* Party.xml in Resources */ = {isa = PBXBuildFile; fileRef = 73E87BCA18FAC41F000E120C /* Party.xml */; };
 		73E87BCE18FAC446000E120C /* RssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E87BCD18FAC446000E120C /* RssParser.m */; };
 		73E87BD318FAC8B1000E120C /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E87BD218FAC8B1000E120C /* Party.m */; };
 /* End PBXBuildFile section */
@@ -71,7 +70,6 @@
 		73E84F7518FA9A2D005100D9 /* navbackcolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbackcolor.png; sourceTree = "<group>"; };
 		73E87BC718FAC34C000E120C /* Rss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rss.h; sourceTree = "<group>"; };
 		73E87BC818FAC34C000E120C /* Rss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rss.m; sourceTree = "<group>"; };
-		73E87BCA18FAC41F000E120C /* Party.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Party.xml; sourceTree = "<group>"; };
 		73E87BCC18FAC446000E120C /* RssParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RssParser.h; sourceTree = "<group>"; };
 		73E87BCD18FAC446000E120C /* RssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssParser.m; sourceTree = "<group>"; };
 		73E87BD118FAC8B1000E120C /* Party.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Party.h; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 		735E56A918FA95C200130EF0 /* RSS 阅读器 */ = {
 			isa = PBXGroup;
 			children = (
-				73E87BCA18FAC41F000E120C /* Party.xml */,
 				73E84F7718FA9ACE005100D9 /* Resources */,
 				73E87BD018FAC464000E120C /* Model */,
 				73E84F7118FA97B1005100D9 /* Support */,
@@ -298,7 +295,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73E87BCB18FAC41F000E120C /* Party.xml in Resources */,
 				735E56AE18FA95C200130EF0 /* InfoPlist.strings in Resources */,
 				73E84F7618FA9A2D005100D9 /* navbackcolor.png in Resources */,
 				735E56B618FA95C200130EF0 /* Images.xcassets in Resources */,
