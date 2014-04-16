@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7A5385E2-3D11-4DC8-860B-C3CC542CD72F</string>
+	<string>ED535A1B-5F8B-45EB-8B19-B4EC3399E346</string>
 	<key>IDESourceControlProjectName</key>
 	<string>RSS 阅读器</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>https://github.com/hhgz9527/moshoublackroom.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>RSS 阅读器.xcworkspace</string>
+	<string>RSS 阅读器.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8DFCD6C1-7705-4F0A-8CC9-0B4934D081E8</key>
-		<string>..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/hhgz9527/moshoublackroom.git</string>
