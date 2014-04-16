@@ -26,11 +26,11 @@
 		73C13C7218FC392400624854 /* LocalModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 73C13C7018FC392400624854 /* LocalModel.xcdatamodeld */; };
 		73C13C8018FC48AE00624854 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 73C13C7F18FC48AE00624854 /* libsqlite3.dylib */; };
 		73C13C8318FC4C2C00624854 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 73C13C8218FC4C2C00624854 /* Entry.m */; };
-		73E84F7418FA97D0005100D9 /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E84F7318FA97D0005100D9 /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		73E84F7618FA9A2D005100D9 /* navbackcolor.png in Resources */ = {isa = PBXBuildFile; fileRef = 73E84F7518FA9A2D005100D9 /* navbackcolor.png */; };
 		73E87BC918FAC34C000E120C /* Rss.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E87BC818FAC34C000E120C /* Rss.m */; };
 		73E87BCE18FAC446000E120C /* RssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E87BCD18FAC446000E120C /* RssParser.m */; };
 		73E87BD318FAC8B1000E120C /* Party.m in Sources */ = {isa = PBXBuildFile; fileRef = 73E87BD218FAC8B1000E120C /* Party.m */; };
+		C8284C318AA349F09EB75386 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9121A02271774B1684A6EFB5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72FFDCAF4E844B8DB0A9C34F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		734D18E418FD77990076270B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		734D18E618FD8F430076270B /* ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
 		734D18E718FD8F430076270B /* ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
@@ -70,8 +71,6 @@
 		73C13C7F18FC48AE00624854 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		73C13C8118FC4C2C00624854 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		73C13C8218FC4C2C00624854 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
-		73E84F7218FA97D0005100D9 /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
-		73E84F7318FA97D0005100D9 /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		73E84F7518FA9A2D005100D9 /* navbackcolor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbackcolor.png; sourceTree = "<group>"; };
 		73E87BC718FAC34C000E120C /* Rss.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rss.h; sourceTree = "<group>"; };
 		73E87BC818FAC34C000E120C /* Rss.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rss.m; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		73E87BCD18FAC446000E120C /* RssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RssParser.m; sourceTree = "<group>"; };
 		73E87BD118FAC8B1000E120C /* Party.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Party.h; sourceTree = "<group>"; };
 		73E87BD218FAC8B1000E120C /* Party.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Party.m; sourceTree = "<group>"; };
+		9121A02271774B1684A6EFB5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +91,7 @@
 				735E56A618FA95C200130EF0 /* CoreGraphics.framework in Frameworks */,
 				735E56A818FA95C200130EF0 /* UIKit.framework in Frameworks */,
 				735E56A418FA95C200130EF0 /* Foundation.framework in Frameworks */,
+				C8284C318AA349F09EB75386 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +116,7 @@
 				735E56C218FA95C200130EF0 /* RSS 阅读器Tests */,
 				735E56A218FA95C200130EF0 /* Frameworks */,
 				735E56A118FA95C200130EF0 /* Products */,
+				72FFDCAF4E844B8DB0A9C34F /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -136,6 +138,7 @@
 				735E56A518FA95C200130EF0 /* CoreGraphics.framework */,
 				735E56A718FA95C200130EF0 /* UIKit.framework */,
 				735E56BC18FA95C200130EF0 /* XCTest.framework */,
+				9121A02271774B1684A6EFB5 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,7 +193,6 @@
 		73E84F7118FA97B1005100D9 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				73E84F7818FAA1E6005100D9 /* GData */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -201,15 +203,6 @@
 				73E84F7518FA9A2D005100D9 /* navbackcolor.png */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		73E84F7818FAA1E6005100D9 /* GData */ = {
-			isa = PBXGroup;
-			children = (
-				73E84F7218FA97D0005100D9 /* GDataXMLNode.h */,
-				73E84F7318FA97D0005100D9 /* GDataXMLNode.m */,
-			);
-			name = GData;
 			sourceTree = "<group>";
 		};
 		73E87BD018FAC464000E120C /* Model */ = {
@@ -235,9 +228,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 735E56CC18FA95C200130EF0 /* Build configuration list for PBXNativeTarget "RSS 阅读器" */;
 			buildPhases = (
+				662CEE075C8B4D84AC424BEC /* Check Pods Manifest.lock */,
 				735E569C18FA95C200130EF0 /* Sources */,
 				735E569D18FA95C200130EF0 /* Frameworks */,
 				735E569E18FA95C200130EF0 /* Resources */,
+				920C475964C0492CA9021711 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,13 +315,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		662CEE075C8B4D84AC424BEC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		920C475964C0492CA9021711 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		735E569C18FA95C200130EF0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				735E56B418FA95C200130EF0 /* AppDelegate.m in Sources */,
-				73E84F7418FA97D0005100D9 /* GDataXMLNode.m in Sources */,
 				735E56D418FA95F500130EF0 /* MainViewController.m in Sources */,
 				73C13C8318FC4C2C00624854 /* Entry.m in Sources */,
 				73C13C7218FC392400624854 /* LocalModel.xcdatamodeld in Sources */,
@@ -452,6 +479,7 @@
 		};
 		735E56CD18FA95C200130EF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72FFDCAF4E844B8DB0A9C34F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -459,6 +487,7 @@
 				GCC_PREFIX_HEADER = "RSS 阅读器/RSS 阅读器-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "RSS 阅读器/RSS 阅读器-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -467,6 +496,7 @@
 		};
 		735E56CE18FA95C200130EF0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72FFDCAF4E844B8DB0A9C34F /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -474,6 +504,7 @@
 				GCC_PREFIX_HEADER = "RSS 阅读器/RSS 阅读器-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "RSS 阅读器/RSS 阅读器-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
